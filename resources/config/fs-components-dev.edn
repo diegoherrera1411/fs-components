@@ -1,0 +1,26 @@
+{:http-port    8080
+ :http-type    :jetty
+ :http-client  {:services  {:json-api "https://jsonplaceholder.typicode.com"}
+                :endpoints {:get-all-todos       {:method   :get
+                                                  :base-url :json-api
+                                                  :url      "/todos"}
+                            :get-todo-by-user-id {:method   :get
+                                                  :base-url :json-api
+                                                  :url      "/users/:user-id/todos"}
+                            :get-todo-by-id      {:method   :get
+                                                  :base-url :json-api
+                                                  :url      "/todos/:todo-id"}
+                            :create-resource     {:method   :post
+                                                  :base-url :json-api
+                                                  :url      "/todos"}
+                            :update-todo         {:method   :post
+                                                  :base-url :json-api
+                                                  :url      "/todos/:todo-id"}}}
+ :datomic-uri  "datomic:dev://localhost:4334/hello?password=datomic"
+ :kafka-server "localhost:9092"
+ :kafka-topics {:new-order        {:topic-str "NEW_ORDER"
+                                   :type      :kafka.interaction/all}
+                :validate-fraud   {:topic-str "VALIDATE_FRAUD"
+                                   :type      :kafka.interaction/all}
+                :inventory-change {:topic-str "INVENTORY_CHANGE"
+                                   :type      :kafka.interaction/produce}}}
