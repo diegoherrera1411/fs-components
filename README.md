@@ -1,5 +1,7 @@
 # fs-components
 
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.alejozen98/fs-components.svg)](https://clojars.org/org.clojars.alejozen98/fs-components)
+
 A component library used for learning how to use Stuart Sierra's component library.
 
 ## Usage
